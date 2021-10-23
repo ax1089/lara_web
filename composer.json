@@ -31,6 +31,7 @@
         },
         "files": [
             "app/helpers.php"
+            //"App/Handlers/ImageUploadHangler.php"
         ]
     },
     "autoload-dev": {

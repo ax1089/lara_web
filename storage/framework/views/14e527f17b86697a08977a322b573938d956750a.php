@@ -9,7 +9,7 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form action="<?php echo e(route('users.update',$user->id)); ?>" method="POST" accept-charset="UTF-8">
+                <form action="<?php echo e(route('users.update',$user->id)); ?>" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                     <?php echo $__env->make('shared._error', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -23,8 +23,17 @@
                     </div>
                     <div class="form-group">
                         <label for="introduction-field">用户简介</label>
-                        <textarea name="introduction" id="introduction-field" class="form-control" rows="3"></textarea>
+                        <textarea name="introduction" id="introduction-field" class="form-control" rows="3"><?php echo e(old('introduction',$user->introduction)); ?></textarea>
                     </div>
+                      <div class="form-group mb-4">
+                        <label for="" class="avatar-label">用户头像</label>
+                        <input type="file" name="avatar" class="form-control-file">
+
+                        <?php if($user->avatar): ?>
+                          <br>
+                          <img class="thumbnail img-responsive" src="<?php echo e($user->avatar); ?>" width="200" />
+                        <?php endif; ?>
+                      </div>
                     <div class="wel wel-sm">
                         <button type="submit" class="btn btn-primary">提交</button>
                     </div>

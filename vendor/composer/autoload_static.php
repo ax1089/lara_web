@@ -38,6 +38,7 @@ class ComposerStaticInit704ff7585e7fca1ffd1fe2c117a366da
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '5e8fe2a5ffaded85af682684fe3bbf5a' => __DIR__ . '/..' . '/mews/captcha/src/helpers.php',
         'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
+        '7559eb3f8d416685cffbf3224fb0dfbc' => __DIR__ . '/../..' . '/App/Handlers/ImageUploadHangler.php',
     );
 
     public static $prefixLengthsPsr4 = array (
