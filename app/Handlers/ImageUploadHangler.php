@@ -2,14 +2,17 @@
 
 namespace App\Handlers;
 
-use Illuminate\Support\Str;
+// use Illuminate\Support\Str;
+
+use Image;
+use Str;
 
 class ImageUploadHandler
 {
     // 只允许以下后缀名的图片文件上传
     protected $allowed_ext = ["png", "jpg", "gif", 'jpeg'];
 
-    public function save($file, $folder, $file_prefix)
+    public function save($file, $folder, $file_prefix,$max_width=false)
     {
         // 构建存储的文件夹规则，值如：uploads/images/avatars/201709/21/
         // 文件夹切割能让查找效率更高。
@@ -34,8 +37,59 @@ class ImageUploadHandler
         // 将图片移动到我们的目标存储路径中
         $file->move($upload_path, $filename);
 
+        //如果限制了图片宽度，就进行裁剪
+        if ($max_width && $extension != 'gif') {
+            // 此类中封装函数，用于裁剪图片
+            $this->reduceSize($upload_path.'/'.$filename,$max_width);
+        }
+
+
         return [
             'path' => config('app.url') . "/$folder_name/$filename"
         ];
     }
+
+    public function reduceSize($file_path,$max_width){
+        //先实例化，传参事文件的磁盘物理路径‘
+        $image = Image::make($file_path);
+        //进行大小调整操作
+        $image->resize($max_width,null,function($condition){
+            //设定宽带事 $max_width,高度等比例缩放
+            $condition->aspectRatio();
+
+            //防止截图时图片尺寸变大
+            $condition->upsize();
+        });
+
+        //对图片进行修改
+        $image->save();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
