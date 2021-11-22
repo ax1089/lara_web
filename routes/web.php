@@ -43,3 +43,5 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 //添加用户路由
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
+Route::resource('projects', 'ProjectsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
