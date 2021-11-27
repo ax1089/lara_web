@@ -23,14 +23,16 @@
                 </div>
             </div>
             <hr>
-
             
-            <div class="card ">
+            <div class="card">
                 <div class="card-body">
-                    暂无数据 ~_~
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active bg-transparent" href="#">Ta 的话题</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Ta 的回复</a></li>
+                    </ul>
+                    <?php echo $__env->make('users._topics', ['topics' => $user->topics()->recent()->paginate(5)], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>
             </div>
-
         </div>
     </div>
 <?php $__env->stopSection(); ?>
