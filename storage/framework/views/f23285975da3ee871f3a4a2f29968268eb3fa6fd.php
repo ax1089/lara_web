@@ -1,9 +1,16 @@
-<?php $__env->startSection('title','话题列表'); ?>
+<?php $__env->startSection('title',isset($category) ? $category->name : '话题列表'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="row mb-5" >
   <div class="col-lg-9 col-md-9 topic-list">
-    <div class="card">
 
+    <?php if(isset($category)): ?>
+      <div class="alert alert-info" role="alert">
+        <?php echo e($category->name); ?> : <?php echo e($category->description); ?>
+
+      </div>
+    <?php endif; ?>
+
+    <div class="card">
       <div class="card-header bg-transparent">
         <ul class="nav nav-pills">
           <li class="nav-item"><a class="nav-link active" href="#">最后回复</a> </li>
