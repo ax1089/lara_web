@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="<?php echo e(mix('css/app.css')); ?>" rel="stylesheet">
 
+    <?php echo $__env->yieldContent('styles'); ?>
+
 </head>
 
 <body>
@@ -33,6 +35,7 @@
 
 <!-- Scripts -->
 <script src="<?php echo e(mix('js/app.js')); ?>"></script>
+<?php echo $__env->yieldContent('scripts'); ?>
 </body>
 
 </html>

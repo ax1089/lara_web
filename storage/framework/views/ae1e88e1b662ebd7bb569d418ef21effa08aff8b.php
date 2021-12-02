@@ -49,7 +49,24 @@
     </div>
   </div>
 </div>
+<?php $__env->startSection('styles'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/simditor.css')); ?>">
+<?php $__env->stopSection(); ?>
 
+<?php $__env->startSection('scripts'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('js/module.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/hotkeys.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/uploader.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/simditor.js')); ?>"></script>
+
+    <script>
+        $(document).ready(function() {
+            var editor = new Simditor({
+                textarea: $('#editor'),
+            });
+        });
+    </script>
+<?php $__env->stopSection(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/liwencai/MAMP PRO/snapshots/lara_web/resources/views/topics/create_and_edit.blade.php ENDPATH**/ ?>
