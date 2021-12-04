@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <title><?php echo $__env->yieldContent('title', 'Lartest'); ?> - EMBA</title>
-
+    <meta name="description" content="<?php echo $__env->yieldContent('description','leeblog 老李博客'); ?>"/>
     <!-- Styles -->
     <link href="<?php echo e(mix('css/app.css')); ?>" rel="stylesheet">
 

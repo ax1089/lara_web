@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Lartest') - EMBA</title>
-
+    <meta name="description" content="@yield('description','leeblog 老李博客')"/>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
