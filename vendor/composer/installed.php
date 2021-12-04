@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '17e7780092b87551e5c12709e060de1fc8eb1804',
+    'reference' => 'be2bde0319cec6465d30d772a84ee8a58c7d4112',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -105,6 +105,15 @@
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'ezyang/htmlpurifier' => 
+    array (
+      'pretty_version' => 'v4.13.0',
+      'version' => '4.13.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '08e27c97e4c6ed02f37c5b2b20488046c8d90d75',
     ),
     'facade/flare-client-php' => 
     array (
@@ -463,7 +472,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '17e7780092b87551e5c12709e060de1fc8eb1804',
+      'reference' => 'be2bde0319cec6465d30d772a84ee8a58c7d4112',
     ),
     'laravel/sail' => 
     array (
@@ -563,6 +572,15 @@
       array (
       ),
       'reference' => '42c1b320e4cad1f6ec9a395da36d7eda5b67d122',
+    ),
+    'mews/purifier' => 
+    array (
+      'pretty_version' => '3.3.6',
+      'version' => '3.3.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1d033fc32b98036226002c38747d4a45424d5f28',
     ),
     'mockery/mockery' => 
     array (
