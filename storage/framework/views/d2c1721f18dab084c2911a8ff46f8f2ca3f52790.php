@@ -11,11 +11,11 @@
                 <div class="media-body">
 
                     <div class="media-heading mt-0 mb-1">
-                        <a href="<?php echo e(route('topics.show', [$topic->id])); ?>" title="<?php echo e($topic->title); ?>">
+                        <a href="<?php echo e($topic->link()); ?>" title="<?php echo e($topic->title); ?>">
                             <?php echo e($topic->title); ?>
 
                         </a>
-                        <a class="float-right" href="<?php echo e(route('topics.show', [$topic->id])); ?>">
+                        <a class="float-right" href="<?php echo e($topic->link()); ?>">
                             <span class="badge badge-secondary badge-pill"> <?php echo e($topic->reply_count); ?> </span>
                         </a>
                     </div>
